@@ -3,6 +3,7 @@ const loadAllCategories = async() => {
     const data = await res.json();
     // console.log(data);
     return data.data.news_category;
+   
 }
 
 const setAllCategories = async() => {
@@ -10,6 +11,7 @@ const setAllCategories = async() => {
     // console.log(data);
 
     const ul = document.getElementById('category') 
+
 
     for(const category of data){
         // console.log(category.category_id);
@@ -25,12 +27,21 @@ const setAllCategories = async() => {
     }
 }
 
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if(isLoading){
+        loaderSection.classList.remove('hidden')
+    }else{
+        loaderSection.classList.add('hidden')
+    }
+}
+
 
 
 const categoryDetail = (code) => {
     // console.log(code);
     const loadDetail = ` https://openapi.programming-hero.com/api/news/category/${code}`;
-
+ 
 fetch(loadDetail)
 .then(res => res.json())
 .then(data => displaySingleCategories(data.data))
@@ -46,7 +57,7 @@ const displaySingleCategories = (items) => {
         // console.log(item);
 
 const {thumbnail_url , title , total_view , details , image_url , author , _id} = item;
-
+toggleSpinner(true);
 const creatingDiv = document.createElement('div');
 creatingDiv.classList.add = ('rounded-md');
 creatingDiv.innerHTML = `
@@ -75,6 +86,9 @@ creatingDiv.innerHTML = `
 `;
 singleCategori.appendChild(creatingDiv);
 }
+// stop loader
+
+toggleSpinner(false)
 }
 
 
