@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNEW</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3654e1683e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+<header class="w-10/12 mx-auto mb-5">
+    <div class="navbar bg-base-300">
+        <div class="flex-1">
+          <a class="btn btn-ghost normal-case text-xl">Top News  <kbd class="kbd kbd-lg">OF</kbd>Entire World</a>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li>
+                <a href="index.html">News</a>
+            </li>
+            <li><a>Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="divider"></div> 
+
+
+      
+</header>
+
+
+<main class="w-10/12 mx-auto">
+
+      <div tabindex="0" class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+        <div class="collapse-title text-xl font-medium">
+            what is the Difference of “var” vs “let” vs “const” in Javascript
+        </div>
+        <div class="collapse-content"> 
+            <p>var can do so many things since the variable declared under var can be scoped globally and locally, or you might heard of the term “function scope”. For instance,<br>Global scope means a variable can be scoped outside of the function since it is defined outside of the function, while local scope means a variable is defined inside the function locally, therefore that variable cannot be called outside of the function.. <br>We can also update the var variable if you want. <br>We can redeclare the var variable as well.
+                <br><br>
+                Let works quite similar tovar, except let is block-scoped. A block is referring to anything within the curly braces {}.
+                <br><br>
+                const is quite self-explanatory. const variables maintain constant values. While the nature of const is quite different from let , they both share a lot of similarities.
+        
+        Like let declarations, const is block-scoped. I hope the above examples clarify what block-scoped is.
+        
+        const declarations, like let , are not initialized when they are hoisted to the top.
+        
+        const cannot be redeclared, just like let. But the difference from let is const cannot be updated.
+            </p>
+        </div>
+      </div>
+
+      <div tabindex="0" class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+        <div class="collapse-title text-xl font-medium">
+            Difference Between Arrow Function and Regular Function
+        </div>
+        <div class="collapse-content"> 
+          <p>
+
+            1) Arguments binding
+            arguments object inside the regular functions contains the list of arguments. <br>
+            The arrow function, on the opposite, doesn’t define arguments i.e. they do not have arguments binding.But you can easily access the arrow function arguments using a rest parameter ...args.
+            <br><br>
+            2) Use of this keyword
+Inside of a regular JavaScript function, this value is dynamic. The dynamic context means that the value of this depends on how the function is invoked.
+<br>The behavior of this inside of an arrow, function differs considerably from the regular function’s this behavior as an arrow function does not have its own “this” keyword.
+
+The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function which means No matter how or where being executed, this value inside of an arrow function always equals this value from the outer function.
+
+
+
+
+
+
+          </p>
+        </div>
+      </div>
+
+
+      <div tabindex="0" class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+        <div class="collapse-title text-xl font-medium">
+            .forEach(), .map(), .filter(), .find .... What's the difference?
+        </div>
+        <div class="collapse-content"> 
+          <p>.forEach(),<br> is used to execute the same code on every element in an array but does not change the array and it returns undefined.
+            <br><br>
+            .map(): <br>
+.map() executes the same code on every element in an array and returns a new array with the updated elements.
+
+<br><br>
+
+.filter(): <br>
+.filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.
+<br><br>
+.find() <br>
+The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+          </p>
+        </div>
+      </div>
+
+</main>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
