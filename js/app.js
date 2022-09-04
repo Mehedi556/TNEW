@@ -76,3 +76,43 @@ creatingDiv.innerHTML = `
 singleCategori.appendChild(creatingDiv);
 }
 }
+
+
+
+const modalDetailBtn = (code) => {
+
+    const url = `https://openapi.programming-hero.com/api/news/${code}`;
+    // console.log(url);
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayDetails(data.data[0]));
+    }
+    
+    const displayDetails = (mainDetails) => {
+        // console.log(mainDetails);
+    const {author , thumbnail_url , title , total_view , image_url} = mainDetails;
+     
+    const modalImg = document.getElementById('modal-img');
+    modalImg.innerHTML = `
+    <img src="${image_url}" alt="">
+    `;
+    
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerText = title;
+    
+    const modalMoreDetails = document.getElementById('modal-more-details');
+    modalMoreDetails.innerHTML = `
+    <h4>Author Name: ${author.name}</h4>
+    <h6>Published Date: ${author.published_date}</h6>
+    <p>Total view: ${total_view}</p>
+    `;
+    
+    
+    }
+    
+    
+    
+    // displaySingleCategories('All News');
+    categoryDetail('Breaking News');
+    setAllCategories('Breaking News');
+    loadAllCategories('Breaking News');
